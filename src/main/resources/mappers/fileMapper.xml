@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fileMapper">
+
+	<insert id="fileUpload" parameterType="hashmap">
+		INSERT INTO
+			FILE(
+				fpath,
+				fname,
+				f_size
+			)
+			VALUES(
+				#{F_DIR},
+				#{ORG_FNAME},
+				#{F_SIZE}
+			)
+	</insert>
+	
+	<select id="fileList" resultType="java.util.HashMap">
+		SELECT 
+			*
+		FROM FILE
+		GROUP BY
+			fname
+	</select>
+	
+	<select id="getFileInfo" parameterType="String" resultType="hashmap">
+		SELECT
+			*
+		FROM
+			FILE
+		WHERE
+			fno = #{FNO}
+	</select>
+</mapper>

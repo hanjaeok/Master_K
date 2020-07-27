@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="imageMapper">
+	
+	<insert id="imgUpload" parameterType="hashmap">
+		INSERT INTO
+			image(
+				img_name,
+				img_path,
+				img_pt_name
+			)VALUES(
+				#{ORG_FNAME},
+				#{IMG_DIR},
+				#{IMG_PT_NAME}	
+			)
+			
+	</insert>
+	
+	<select id="imgListSel" resultType="java.util.HashMap">
+		SELECT
+			*
+		FROM
+			IMAGE
+		WHERE
+			img_use = 'Y'
+	</select>
+</mapper>
