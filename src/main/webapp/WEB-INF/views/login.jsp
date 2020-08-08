@@ -66,7 +66,7 @@
 							</div>
 							<div class="login-buttons">
 								<button type="submit" id="loginFn" class="btn btn-success btn-block btn-lg">로그인</button>
-								<button type="button" class="btn btn-warning btn-block btn-lg">회원가입</button>
+								<button type="button" class="btn btn-warning btn-block btn-lg" onclick="location.href='/register'">회원가입</button>
 							</div>
 						</form:form>
 					</div>

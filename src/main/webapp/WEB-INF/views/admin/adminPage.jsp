@@ -3,8 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
 
-	<jsp:include page="../tiles/header.jsp" />
-
+<jsp:include page="../tiles/header.jsp" />
 		<!-- begin #content -->
 		<div id="content" class="content">
 			<!-- begin breadcrumb -->
@@ -21,7 +20,7 @@
 			<div class="panel panel-inverse">
 				<!-- begin panel-heading -->
 				<div class="panel-heading">
-					<h4 class="panel-title">게시판</h4>
+					<h4 class="panel-title">관리자</h4>
 					<div class="panel-heading-btn">
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
 						<a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
@@ -72,16 +71,6 @@
 			<!-- end panel -->
 		</div>
 		<!-- end #content -->
-	</div>
-	<!-- end page container -->
-	<jsp:include page="../tiles/side.jsp" />
-	
-	<script>
-		$(function(){
-			var table = $('#data-table-default').DataTable();
-			 
-			table
-			    .order( [ 3, 'desc' ] )
-			    .draw();
-		});
-	</script>
+
+
+<jsp:include page="../tiles/side.jsp" />

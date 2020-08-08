@@ -45,8 +45,10 @@
 									<input type="text" class="form-control" name="writer" id="view_writer" value="${RS_BV.writer }" readonly>
 								</div>
 								<div class="mb-3">
-									<label for="ir1">내용</label>
-									<textarea name="ir1" id="view_ir1" class="form-control" readonly>${RS_BV.content }</textarea>
+									<label for="content_label">내용</label>
+									<div class="form-control" readonly>
+										${RS_BV.content }
+									</div>
 								</div>
 							</form>
 							<div>
@@ -77,5 +79,9 @@
 			$("#okChk").show();
 			$("#canclChk").show();
 		});
+		
+		
 	});
+
+	
 </script>

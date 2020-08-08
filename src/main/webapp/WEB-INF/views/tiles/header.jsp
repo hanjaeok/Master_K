@@ -22,6 +22,12 @@
 	<link href="../assets/plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" />
 	<!-- ================== END PAGE LEVEL STYLE ================== -->
+	
+	<style>
+		body{
+			background-image: url('../assets/img/background/pic_t1.jpg');
+		}
+	</style>
 </head>
 <body>
 	<!-- begin #page-loader -->
@@ -34,12 +40,18 @@
 		<div id="header" class="header navbar-default">
 			<!-- begin navbar-header -->
 			<div class="navbar-header">
-				<a href="/" class="navbar-brand"><span class="navbar-logo"></span> <b>Color</b> Admin</a>
+				<a href="/" class="navbar-brand"><i class="fab fa-lg fa-fw m-r-10 fa-hire-a-helper"></i> <b>Master</b> K</a>
 				<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+			</div>
+			
+			<div class="f-s-18 m-t-10 text-center">
+				<sec:authorize access="hasRole('ROLE_ADMIN')">
+					<a href="/admin/adminPage" class="dropdown-item m-l-40" style="border-right: 1px solid gray; border-left: 1px solid gray">관리자</a>
+				</sec:authorize>
 			</div>
 			<!-- end navbar-header -->
 			
@@ -47,23 +59,7 @@
 			<ul class="navbar-nav navbar-right">
 				<li class="navbar-form">
 					<form action="" method="POST" name="search_form">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Enter keyword" />
-							<button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-						</div>
 					</form>
-				</li>
-				<li class="dropdown">
-					<a href="#" data-toggle="dropdown" class="dropdown-toggle f-s-14">
-						<i class="fa fa-bell"></i>
-						<span class="label">0</span>
-					</a>
-					<div class="dropdown-menu media-list dropdown-menu-right">
-						<div class="dropdown-header">NOTIFICATIONS (0)</div>
-						<div class="text-center width-300 p-b-10 p-t-10">
-							No notification found
-						</div>
-					</div>
 				</li>
 				<li class="dropdown navbar-user">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -80,9 +76,9 @@
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<a href="javascript:;" class="dropdown-item">Edit Profile</a>
-						<a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
+						<!-- <a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
 						<a href="javascript:;" class="dropdown-item">Calendar</a>
-						<a href="javascript:;" class="dropdown-item">Setting</a>
+						<a href="javascript:;" class="dropdown-item">Setting</a> -->
 						<div class="dropdown-divider"></div>
 						<%-- <a href="${pageContext.request.contextPath }/logout" class="dropdown-item">Log Out</a> --%>
 						<sec:authorize access="isAnonymous()"> 

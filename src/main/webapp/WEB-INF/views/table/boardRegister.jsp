@@ -50,7 +50,7 @@
 								</div>
 							</form>
 							<div>
-								<button type="submit" class="btn btn-sm btn-primary" data-click="swal-danger" id="btnSave" onclick="submitContents();">저장</button>
+								<button type="submit" class="btn btn-sm btn-primary" data-click="swal-danger" id="btnSave" onclick="BDLS.boardSav();">저장</button>
 								<button type="button" class="btn btn-sm btn-danger"  id="btnList" onclick="location.href='../table/boardList'">목록</button>
 							</div>
 						</div>
@@ -68,4 +68,5 @@
 			sSkinURI: "../se2/SmartEditor2Skin.html",
 			fCreator: "createSEditor2",
 		});
+		
 </script>

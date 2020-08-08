@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!-- begin #sidebar -->
@@ -7,25 +10,27 @@
 				<!-- begin sidebar user -->
 				<ul class="nav">
 					<li class="nav-profile">
-						<a href="javascript:;" data-toggle="nav-profile">
-							<div class="cover with-shadow"></div>
+						<a href="/">
 							<div class="image image-icon bg-black text-grey-darker">
 								<i class="fa fa-user"></i>
 							</div>
 							<div class="info">
 								<b class="caret pull-right"></b>
-								Sean Ngu
-								<small>Front end developer</small>
+								<sec:authorize access="isAuthenticated()">
+									<sec:authentication property="principal.username" var="loginID" />
+									<span class="d-none d-md-inline">${loginID }</span> 
+								</sec:authorize>
+								<small>developer</small>
 							</div>
 						</a>
 					</li>
-					<li>
+					<!-- <li>
 						<ul class="nav nav-profile">
 							<li><a href="javascript:;"><i class="fa fa-cog"></i> Settings</a></li>
 							<li><a href="javascript:;"><i class="fa fa-pencil-alt"></i> Send Feedback</a></li>
 							<li><a href="javascript:;"><i class="fa fa-question-circle"></i> Helps</a></li>
 						</ul>
-					</li>
+					</li> -->
 				</ul>
 				<!-- end sidebar user -->
 				<!-- begin sidebar nav -->
